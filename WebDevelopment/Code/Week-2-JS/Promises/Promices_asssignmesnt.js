@@ -29,16 +29,16 @@ setTImeoutPromised(1000).then(callbackHi);
 setTImeoutPromised(3000).then(callbackHello);
 setTImeoutPromised(5000).then(callbackHelloThere);
 
+//Alternative solution
 
-
-setTimeout(function () {
-    console.log("hi");
-    setTimeout(function () {
-      console.log("hello");
+// setTimeout(function () {
+//     console.log("hi");
+//     setTimeout(function () {
+//       console.log("hello");
   
-      setTimeout(function () {
-        console.log("hello there");
-      }, 5000);
-    }, 3000);
-  }, 1000);
+//       setTimeout(function () {
+//         console.log("hello there");
+//       }, 5000);
+//     }, 3000);
+//   }, 1000);
   
