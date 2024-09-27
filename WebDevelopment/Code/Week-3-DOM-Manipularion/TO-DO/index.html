@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link herf="index.css" rel = "stylesheet" type="text/css">
+    <link href="index.js" rel="script" type="text/script">
+</head>
+
+<body>
+    <h1> TO-DO List </h1>
+    <h4 id ="todo1" class="todo">1. Take Class</h4>
+    <h4 id="todo2" class="todo">2. Do LeetCode</h4>
+    <h4 id="todo3" class="todo">3. Go To Gym</h4>
+    <div>
+        <input type="text" placeholder="Add your todo here"> </input>
+        <button id = "btn" onclick="addTODO()">Add Task</button>       
+    </div>
+    <script>
+        
+        function addTODO(){
+            const inputEL = document.querySelector("input");
+            const value = inputEL.value;
+            console.log(value);
+        }
+        
+    </script>
+</body>
+</html>
