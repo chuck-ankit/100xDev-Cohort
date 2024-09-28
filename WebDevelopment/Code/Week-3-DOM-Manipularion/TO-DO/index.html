@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link herf="index.css" rel = "stylesheet" type="text/css">
-    <link href="index.js" rel="script" type="text/script">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <script src="index.js"></script>
 </head>
 
 <body>
-    <h1> TO-DO List </h1>
-    <h4 id ="todo1" class="todo">1. Take Class</h4>
-    <h4 id="todo2" class="todo">2. Do LeetCode</h4>
-    <h4 id="todo3" class="todo">3. Go To Gym</h4>
-    <div>
-        <input type="text" placeholder="Add your todo here"> </input>
-        <button id = "btn" onclick="addTODO()">Add Task</button>       
+  <h1>Todo list</h1>
+  <div id="todoParent">
+    <div id="todo-1">
+      <h4>1. Take class</h4>
+      <button onclick="deleteTodo(1)">delete</button>
     </div>
-    <script>
-        
-        function addTODO(){
-            const inputEL = document.querySelector("input");
-            const value = inputEL.value;
-            console.log(value);
-        }
-        
-    </script>
+    <div id="todo-2">
+      <h4>2. Go out to eat</h4>
+      <button onclick="deleteTodo(2)">delete</button>
+    </div>
+  </div>
+  <div>
+    <input type="text"></input>
+    <button onclick="addTODO()">Add Todo</button>
+  </div>
 </body>
+
+<script>
+  function deleteTodo(index) {
+    const element = document.getElementById("todo-" + index);
+    element.parentNode.removeChild(element);
+  }
+</script>
+
 </html>
