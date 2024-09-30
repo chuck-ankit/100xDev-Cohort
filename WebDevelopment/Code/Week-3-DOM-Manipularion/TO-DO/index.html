@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="index.css" rel="stylesheet" type="text/css" />
-  <script src="index.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script defer src="index.js"></script>
 </head>
 
 <body>
-  <h1>Todo list</h1>
-  <div id="todoParent">
-    <div id="todo-1">
-      <h4>1. Take class</h4>
-      <button onclick="deleteTodo(1)">delete</button>
-    </div>
-    <div id="todo-2">
-      <h4>2. Go out to eat</h4>
-      <button onclick="deleteTodo(2)">delete</button>
-    </div>
-  </div>
-  <div>
-    <input type="text"></input>
-    <button onclick="addTODO()">Add Todo</button>
-  </div>
-</body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <div class="input-container">
+            <input type="text" id="todoInput" placeholder="Enter your task..." />
+            <select id="prioritySelect">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTODO()">Add Todo</button>
+        </div>
 
-<script>
-  function deleteTodo(index) {
-    const element = document.getElementById("todo-" + index);
-    element.parentNode.removeChild(element);
-  }
-</script>
+        <input type="text" id="searchBar" placeholder="Search Todos..." onkeyup="filterTODOs()" />
+
+        <div id="todoParent"></div>
+    </div>
+</body>
 
 </html>

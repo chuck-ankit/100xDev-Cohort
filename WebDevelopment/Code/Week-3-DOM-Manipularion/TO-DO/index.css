@@ -1,7 +1,135 @@
-#todo-1{
-    background-color: aqua;
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi', sans-serif;
 }
 
-.todo {
-    background-color: aquamarine;
+body {
+    background-color: #121212;
+    color: #E7E7E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #F7C346;
+}
+
+/* Input and Button Styling */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 70%;
+    margin-right: 10px;
+    background-color: #292929;
+    color: white;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #F7C346;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E2A73E;
+}
+
+#searchBar {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #292929;
+    color: white;
+}
+
+/* TODO Item Styling */
+.childTodo {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #292929;
+    border: 1px solid #555;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.childTodo .todo-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.childTodo .priority {
+    font-size: 12px;
+    color: #F7C346;
+}
+
+button.delete-btn, button.edit-btn {
+    padding: 5px 10px;
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button.edit-btn {
+    background-color: #3498DB;
+}
+
+button.delete-btn:hover {
+    background-color: #C0392B;
+}
+
+button.edit-btn:hover {
+    background-color: #2980B9;
+}
+
+/* Animations */
+.childTodo {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
