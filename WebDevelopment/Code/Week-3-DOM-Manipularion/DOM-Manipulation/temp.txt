@@ -1,0 +1,55 @@
+Python Interview questions for Beginners or Freshers
+1. What is the difference between a module and a package?
+2. Is Python a compiled language or an interpreted language?
+3. What are the benefits of using Python language as a tool in the present scenario?
+4. What are global, protected and private attributes in Python?
+5. Is Python case sensitive?
+6. What is Pandas?
+7. How is Exceptional handling done in Python?
+8. What is the Difference between for loop and while loop in Python?
+9. Is Indentation Required in Python?
+10. What is the use of self in Python?
+
+Python Interview Questions for Intermediate
+11. How does Python manage memory? Explain the role of reference counting and garbage collection.
+12. Does Python support multiple Inheritance?
+13. How is memory management done in Python?
+14. How to delete a file using Python?
+15. Which sorting technique is used by sort() and sorted() functions of python?
+16. Differentiate between List and Tuple?
+17. What is slicing in Python?
+18. How is multithreading achieved in Python?
+19. Which is faster, Python list or Numpy Arrays?
+20. Explain Inheritance in python?
+21. How are classes created in python?
+22. Write a program to produce Fibonacci series in python
+23. What is the difference between shallow copy and deep copy in python?
+24. What is the process of compilation and linking in Python?
+25. What is break, continue and pass in Python?
+26. What is PEP 8?
+27. What is an Expression?
+28. What is == in python?
+29. What is type conversion in Python?
+30. Name some commonly used built-in modules in Python?
+
+Advanced Python Interview Questions
+31. What is the difference between xrange and range in functions
+32. What is the zip function?
+33. What is Django Architecture?
+34. What is inheritance in Python?
+35. Define *args and **kwargs in Python
+36. Do runtime errors exist in Python? Explain with an example.
+37. What are docstrings in Python?
+38. How can you capitalize the first letter of a string in Python?
+39. What are the generators in Python?
+40. How to write comments in Python?
+41. What is GIL?
+42. Is Django better than flask?
+43. What is flask? Explain its benefits
+44. What is PIP?
+45. How can you ensure that your Python code is compatible with both Python 2 and Python 3?
+46. What is the difference between Modulus Operator %, Division Operator /, Floor Division Operator // ?
+47. Why doesn't Python deallocate all memory upon exit?
+48. Why is a set known as unordered? Is it mutable or immutable?
+49. What is the difference between DataFrames and Series?
+50. What does len() do?
