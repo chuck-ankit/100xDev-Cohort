@@ -5,4 +5,3 @@ function AddTodo(){
     document.querySelector("body").appendChild(newTodoDivEl);
 }
 
-// hdbjsb++++
