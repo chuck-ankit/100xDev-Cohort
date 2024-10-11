@@ -15,18 +15,39 @@
 
 // Complex Js 
 
-function AddTodo(){
-    //
-    const value = document.querySelector("input").value;
-    const spanEl = document.createElement("span");
-    const buttonEL = document.createElement("button");
-    spanEl.innerHTML = value;
-    buttonEL.innerHTML= "Delete";
-    buttonEL.className = "btn";
-    ///
-    const divEL = document.createElement("div");
-    divEL.appendChild(spanEl);
-    divEL.appendChild(buttonEL);
-    ////
-    document.querySelector("body").appendChild(divEL);
+// function AddTodo(){
+//     //
+//     const value = document.querySelector("input").value;
+//     const spanEl = document.createElement("span");
+//     const buttonEL = document.createElement("button");
+//     spanEl.innerHTML = value;
+//     buttonEL.innerHTML= "Delete";
+//     buttonEL.className = "btn";
+//     ///
+//     const divEL = document.createElement("div");
+//     divEL.appendChild(spanEl);
+//     divEL.appendChild(buttonEL);
+//     ////
+//     document.querySelector("body").appendChild(divEL);
+// }
+
+// State Drived DOM Manipulation
+
+let todo = [];
+function AddTodo() {
+    todos.push({
+        title: document.querySelector("input").value
+    })
+    render();
+}
+
+function DeleteTodo() {
+
+
+    render();
+}
+
+
+function render() {
+
 }
