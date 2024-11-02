@@ -7,12 +7,11 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-cyan-300 underline bold items-center text-center text-6xl font-mono font-weight: 800;'>
-        Flex and Grid in Taliwind CSS
+      <h1 className='bg-cyan-300 underline bold items-center text-center text-4xl sm:text-5xl lg:text-6xl font-mono font-weight: 800;'>
+        Flex and Grid in Tailwind CSS
       </h1>
 
-      {/* Flex  */}
-
+      {/* Flex Section */}
       <div className=" m-4 p-3 bg-gray-100 rounded-md">
         <div className='flex justify-around m-2'>
           <div className="flex-initial bg-slate-500 p-2 rounded-md">Hi, I am flex initial.</div>
@@ -30,18 +29,26 @@ function App() {
         </div>
       </div>
 
-
-
-      {/* Grid */}
+      {/* Grid Section */}
 
       {/* Equal Span Grid */}
-      <div className='grid grid-cols-3 grid-rows-2 m-12 p-4 bg-fuchsia-100'>
-        <div className='bg-fuchsia-200 m-2 p-2'> First </div>
-        <div className='bg-fuchsia-200 m-2 p-2'> Second </div>
-        <div className='bg-fuchsia-200 m-2 p-2'> Third </div>
-        <div className='bg-fuchsia-200 m-2 p-2 col-start-2 row-start-2 text-center'> Fourth </div>
+      <div className='grid grid-cols-2 sm:grid-cols-3 grid-rows-2 gap-4 m-6 sm:m-12 p-4 bg-fuchsia-100'>
+        <div className='bg-fuchsia-200 m-2 p-2 text-center'> First </div>
+        <div className='bg-fuchsia-200 m-2 p-2 text-center'> Second </div>
+        <div className='bg-fuchsia-200 m-2 p-2 text-center'> Third </div>
+        <div className='bg-fuchsia-200 m-2 p-2 sm:col-start-2 row-start-2 text-center'> Fourth </div>
       </div>
-      {/* Unequal Span Grid*/}
+      {/* Unequal Span Grid */}
+      <div className='grid grid-cols-12 grid-rows-2 gap-4 m-6 p-4 bg-bright-green-100'>
+        <div className='bg-bright-green-200 m-1 p-2 text-center col-span-5'> First </div>
+        <div className='bg-bright-green-200 m-1 p-2 text-center col-span-5'> Second </div>
+        <div className='bg-bright-green-200 m-1 p-2 text-center col-span-2'> Third </div>
+        <div className='bg-bright-green-200 m-2 p-2 sm:col-start-1 row-start-2 text-center col-span-12'> Fourth </div>
+      </div>
+
+
+{/* Mobile View /Responsive Design */}
+
 
     </>
   )
