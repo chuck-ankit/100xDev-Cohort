@@ -1,15 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Routes, Route, Link } from 'react-router-dom';
 import Screen1 from './pages/Screen1';
 import Screen2 from './pages/Screen2';
 import Screen3 from './pages/Screen3';
 import Screen4 from './pages/Screen4';
 import Screen5 from './pages/Screen5';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 function App() {
   const [count, setCount] = useState(0)
 
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/screen1" element={<Screen1 />} />
+      <Route path="/screen2" element={<Screen2 />} />
+      <Route path="/screen3" element={<Screen3 />} />
+      <Route path="/screen4" element={<Screen4 />} />
+      <Route path="/screen5" element={<Screen5 />} />
+    </Routes>
+  )
+}
+
+// Create a separate HomePage component
+function HomePage() {
   return (
     <>
       <h1 className='bg-cyan-300 underline bold items-center text-center text-4xl sm:text-5xl lg:text-6xl font-mono font-weight: 800;'>
@@ -17,13 +30,13 @@ function App() {
       </h1>
 
       {/* Navigation Bar */}
-      <nav className="bg-blue-500 p-4 text-white flex justify-center space-x-4">
+      <nav className="bg-blue-500 p-4 text-white flex justify-around space-x-4">
         <Link to="/" className="hover:underline">Home</Link>
-        <Link to="/Screen1" className="hover:underline">Screen 1</Link>
-        <Link to="/Screen2" className="hover:underline">Screen 2</Link>
-        <Link to="/Screen3" className="hover:underline">Screen 3</Link>
-        <Link to="/Screen4" className="hover:underline">Screen 4</Link>
-        <Link to="/Screen5" className="hover:underline">Screen 5</Link>
+        <Link to="/screen1" className="hover:underline">Screen 1</Link>
+        <Link to="/screen2" className="hover:underline">Screen 2</Link>
+        <Link to="/screen3" className="hover:underline">Screen 3</Link>
+        <Link to="/screen4" className="hover:underline">Screen 4</Link>
+        <Link to="/screen5" className="hover:underline">Screen 5</Link>
       </nav>
 
       {/* Flex Section */}
@@ -67,7 +80,7 @@ function App() {
       </div>
 
       {/* Mobile View /Responsive Design */}
-      <h3 className='text-2xl font-semibold my-4'>Mobile View / Responsive Design</h3>
+      <h3 className='text-2xl font-semibold my-4 text-center bg-blend-color-dodge'>Mobile View / Responsive Design</h3>
       <div className='bg-waikawa-gray-100 m-6 p-4 grid lg:grid-cols-3 sm:grid-rows-3 md:grid-rows-3'>
         <div className='bg-waikawa-gray-200 m-2 p-2 text-center'>Item 1</div>
         <div className='bg-waikawa-gray-200 m-2 p-2 text-center'>Item 2</div>

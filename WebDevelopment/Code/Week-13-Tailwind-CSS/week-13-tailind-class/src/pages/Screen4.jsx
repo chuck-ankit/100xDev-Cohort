@@ -1,6 +1,6 @@
 // Screen1.jsx
 function Screen1() {
-    return <h2 className="text-center mt-8 text-2xl">This is Screen 1</h2>;
+    return <h2 className="text-center mt-8 text-2xl">This is Screen 4</h2>;
   }
   export default Screen1;
   
