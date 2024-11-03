@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js" // Add Flowbite content here
   ],
   theme: {
     extend: {
@@ -46,10 +47,10 @@ export default {
           '900': '#0050b3',
           '950': '#002a5b',
         },
-
-
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin') // Add Flowbite plugin here
+  ],
 };

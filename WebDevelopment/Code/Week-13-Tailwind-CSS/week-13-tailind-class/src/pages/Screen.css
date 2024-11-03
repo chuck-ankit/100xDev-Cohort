@@ -8,3 +8,7 @@
     padding: 20px;
   }
   
+/* Apply filter to make the image white */
+.filter-white {
+  filter: brightness(0) invert(1);
+}
