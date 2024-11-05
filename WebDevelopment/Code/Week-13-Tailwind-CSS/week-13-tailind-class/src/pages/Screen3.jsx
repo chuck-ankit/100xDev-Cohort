@@ -24,13 +24,13 @@ function Screen3() {
 
       {/* Input Field */}
       <div className="flex justify-center mb-[20px]">
-        <div className='flex justify-between p=3'>
-          <input id='otp-1' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-2' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-3' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-4' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-5' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-6' className="rounded-md h-12 w-10 mr-5" style={{ backgroundColor: '#19406B' }} />
+        <div className='flex justify-between p=3 text-white text-center'>
+          <input id='otp-1' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
+          <input id='otp-2' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
+          <input id='otp-3' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
+          <input id='otp-4' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
+          <input id='otp-5' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
+          <input id='otp-6' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
           
         </div>
       </div>
