@@ -1,10 +1,43 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Screen.css';
 import logo from '../assets/webinar.png';
-import Screen4 from './Screen4';
 
 function Screen3() {
+  const inputRefs = useRef([]);
+  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleInputChange = (e, index) => {
+    const value = e.target.value;
+
+    // Update OTP state
+    if (!isNaN(value) && value.length <= 1) {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+
+      // Move to next input field if value is not empty
+      if (value !== "" && index < inputRefs.current.length - 1) {
+        inputRefs.current[index + 1].focus();
+      }
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    // Handle backspace to move back
+    if (e.key === "Backspace") {
+      if (otp[index] === "" && index > 0) {
+        inputRefs.current[index - 1].focus();
+      }
+    }
+  };
+
+  const handleContinue = () => {
+    // Navigate to Screen5
+    navigate('/Screen5');
+  };
+
   return (
     <div className="screen1-container">
       {/* Logo and Title */}
@@ -24,24 +57,31 @@ function Screen3() {
 
       {/* Input Field */}
       <div className="flex justify-center mb-[20px]">
-        <div className='flex justify-between p=3 text-white text-center'>
-          <input id='otp-1' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-2' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-3' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-4' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-5' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          <input id='otp-6' className="rounded-md h-12 w-10 mr-5 text-center" style={{ backgroundColor: '#19406B' }} />
-          
+        <div className="flex space-x-4">
+          {otp.map((value, index) => (
+            <input
+              key={index}
+              ref={(el) => (inputRefs.current[index] = el)}
+              type="text"
+              maxLength="1"
+              value={value}
+              onChange={(e) => handleInputChange(e, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              className="rounded-md h-12 w-10 text-white text-center"
+              style={{ backgroundColor: '#19406B' }}
+            />
+          ))}
         </div>
       </div>
 
       {/* Button */}
       <div className="flex justify-center">
-        <button 
+        <button
           id="continue"
           name="continue"
           className="text-white bg-green-vogue-200 rounded-md h-12 w-[20%] text-center hover:bg-slate-50"
           style={{ backgroundColor: '#d1d1d1' }}
+          onClick={handleContinue} // Add onClick to trigger navigation
         >
           Continue
         </button>

@@ -1,10 +1,28 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Screen.css';
 import logo from '../assets/webinar.png';
-import Screen3 from './Screen3';
 
 function Screen2() {
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState(true);
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValid(emailRegex.test(value) || value === '');
+  };
+
+  const handleContinue = () => {
+    if (isValid && email) {
+      navigate('/screen3');
+    }
+  };
+
   return (
     <div className="screen1-container">
       {/* Logo and Title */}
@@ -16,30 +34,39 @@ function Screen2() {
         </span>
       </div>
 
-      {/* Verification Text */}
-      <div className="text-white text-center text-2xl font-medium mb-[50px]">Let's Get Staeted</div>
+      {/* Instruction Text */}
+      <div className="text-white text-center text-2xl font-medium mb-[50px]">Let's Get Started</div>
 
-
-      {/* Input Field */}
-      <div className="flex justify-center mb-[30px]"> 
+      {/* Email Input Field */}
+      <div className="flex flex-col items-center mb-[30px]">
         <input
           id="year"
           type="text"
           name="year"
           placeholder="Email Id"
-          className=" rounded-md h-12 w-[20%] text-start pl-8"
+          value={email}
+          onChange={handleInputChange}
+          className="rounded-md h-12 w-[20%] text-start pl-8 text-white"
           style={{ backgroundColor: '#19406B' }}
-          focus:text-red-600
+          required // Makes the input mandatory
         />
+        {/* Warning Message */}
+        {!isValid && (
+          <span className="text-red-500 text-sm mt-2">
+            This is a mandatory field. Please enter a valid email address.
+          </span>
+        )}
       </div>
 
-      {/* Button */}
+      {/* Continue Button */}
       <div className="flex justify-center">
-        <button 
+        <button
           id="continue"
           name="continue"
-          className="text-white bg-green-vogue-200 rounded-md h-12 w-[20%] text-center hover:bg-slate-50"
-          style={{ backgroundColor: '#d1d1d1' }}
+          className={`text-white rounded-md h-12 w-[20%] text-center ${isValid && email ? 'bg-green-vogue-200 hover:bg-green-600' : 'bg-gray-400'}`}
+          style={{ backgroundColor: isValid && email ? '#70f0f0' : '#d1d1d1' }}
+          onClick={handleContinue}
+          disabled={!isValid || !email} // Disable button if email is invalid or empty
         >
           Continue
         </button>
