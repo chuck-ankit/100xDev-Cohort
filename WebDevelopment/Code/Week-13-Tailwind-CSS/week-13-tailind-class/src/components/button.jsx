@@ -1,14 +1,14 @@
 import '../App.css';
 
 export const Button = ({
-    disabled, 
+    disabled,
     children,
     onClick
 }) => {
     return (
-        <span 
-            onClick={disabled} 
-            className={`rounded-2xl text-semibold text-2xl px-32 py-4 text-white cursor-pointer ${disabled ? "bg-green-400" : "bg-slate-400 cursor-not-allowed"}`}
+        <span
+            onClick={disabled ? null : onClick}
+            className={`rounded-2xl font-semibold text-2xl px-32 py-4 text-white cursor-pointer ${disabled ? "bg-green-400" : "bg-slate-400 cursor-not-allowed"}`}
         >
             {children}
         </span>
