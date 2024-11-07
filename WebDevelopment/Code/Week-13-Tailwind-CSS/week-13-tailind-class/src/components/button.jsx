@@ -8,7 +8,9 @@ export const Button = ({
     return (
         <span
             onClick={disabled ? null : onClick}
-            className={`rounded-2xl font-semibold text-2xl px-32 py-4 text-white cursor-pointer ${disabled ? "bg-green-400" : "bg-slate-400 cursor-not-allowed"}`}
+            className={`rounded-md font-semibold h-12 w-[20%] text-center justify-center py-2
+                text-white cursor-pointer ${disabled ?
+                    "bg-blue-new cursor-not-allowed " : " bg-green-400"}`}
         >
             {children}
         </span>
