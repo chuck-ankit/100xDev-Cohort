@@ -8,6 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
+
+
         'bright-green': {
           '50': '#f1ffe6',
           '100': '#e0fec9',
@@ -49,6 +51,17 @@ export default {
     
         },
         "blue-new": "#d1d1d1",
+        blue: {
+          200: "#8094ad",
+          500: "#19406a",
+          700: "#002b5b",
+        },
+        green: {
+          400: "#36c6c0"
+        },
+        slate: {
+          200: "#e4e8ee",
+        }
       },
     },
   },

@@ -8,7 +8,7 @@ export const Button = ({
     return (
         <span
             onClick={disabled ? null : onClick}
-            className={`rounded-md font-semibold h-12 w-[20%] text-center justify-center py-2
+            className={`rounded-md font-semibold py-3 px-32 text-center justify-center 
                 text-white cursor-pointer ${disabled ?
                     "bg-blue-new cursor-not-allowed " : " bg-green-400"}`}
         >
