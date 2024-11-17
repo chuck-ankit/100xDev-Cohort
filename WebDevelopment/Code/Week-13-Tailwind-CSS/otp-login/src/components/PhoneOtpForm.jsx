@@ -14,8 +14,12 @@ const PhoneOtpForm = () => {
     }
   };
 
-  const handleCountryCode = (e) => {
-    setCountryCode(e.target.value);
+  const handleCountryCode = (event) => {
+    setCountryCode(event.target.value);
+  };
+
+  const handlePhoneSubmit = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -34,7 +38,8 @@ const PhoneOtpForm = () => {
             <option value="+91">+91</option>
             <option value="+1">+1</option>
             <option value="+44">+44</option>
-            {/* Add other country codes as needed */}
+            <option value="+5">+5</option>
+            <option value="+92">+92</option>
           </select>
           
           <input
