@@ -48,12 +48,12 @@ graph TD
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/otp-login-system.git
+   git clone https://github.com/chuck-ankit/100xDev-Cohort.git
    ```
 
 2. Install dependencies:
    ```bash
-   cd otp-login-system
+   cd 100xDev-Cohort/WebDevelopment/Code/Week-13-Tailwind-CSS/otp-login
    npm install
    ```
 
