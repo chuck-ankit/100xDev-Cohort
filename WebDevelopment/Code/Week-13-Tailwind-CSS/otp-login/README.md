@@ -33,15 +33,25 @@ graph TD
 
 ```
 .
+├── node_modules/           # Dependencies
+├── public/                # Static files
 ├── src/
-│   ├── App.jsx                # Main application entry point
-│   ├── components/            # Folder for reusable components
-│   │   ├── PhoneOtpForm.jsx  # Handles phone number and OTP logic
-│   │   └── OtpInput.jsx      # Manages OTP input and validation
-│   ├── styles/               # Tailwind CSS styles
-│   └── index.js              # React app entry
-├── package.json              # Project dependencies and scripts
-└── README.md                # Documentation (this file)
+│   ├── components/
+│   │   ├── OtpInput.jsx   # OTP input component
+│   │   └── PhoneOtpForm.jsx # Phone number form component
+│   ├── App.css
+│   ├── App.jsx           # Main application component
+│   ├── index.css         # Global styles
+│   └── main.jsx          # Entry point
+├── .gitignore            # Git ignore configuration
+├── eslint.config.js      # ESLint configuration
+├── index.html            # HTML template
+├── package-lock.json     # Lock file for dependencies
+├── package.json          # Project configuration and dependencies
+├── postcss.config.js     # PostCSS configuration
+├── README.md            # Project documentation
+├── tailwind.config.js    # Tailwind CSS configuration
+└── vite.config.js       # Vite configuration
 ```
 
 ## Getting Started
