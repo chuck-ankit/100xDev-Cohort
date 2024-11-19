@@ -1,11 +1,10 @@
-import './App.css'
-import PhoneOtpForm from './components/PhoneOtpForm'
+import React from "react";
+import PhoneOtpForm from "./components/PhoneOtpForm";
 
 function App() {
   return (
-    <div className="font-sans bg-victoria-50 h-screen flex items-center justify-center">
-      <div className="text-center p-6 bg-white shadow-md rounded-lg max-w-md border border-victoria-200">
-        <h1 className="text-3xl font-semibold text-victoria-700 mb-4">Login with Phone</h1>
+    <div className="App min-h-screen w-screen bg-victoria-50 p-4 flex items-center justify-center">
+      <div className="w-full max-w-md">
         <PhoneOtpForm />
       </div>
     </div>
