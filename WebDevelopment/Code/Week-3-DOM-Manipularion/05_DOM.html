@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            background-color: rgb(226, 61, 61);
+            color: white;
+            border-radius: 10px;
+            height: 100px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<script>
+    function onButtonPress() {
+        const currentValue = document.getElementById("btn").innerHTML;
+        const currentCount = currentValue.split(" ")[1];
+        const newCount = parseInt(currentCount) + 1;
+        document.getElementById("btn").innerHTML = `Count ${newCount}`;
+    }
+</script>
+
+<body class="center-container">
+    <button onclick="onButtonPress()" id="btn" type="button" class="button">Count 0</button>
+</body>
+
+</html>
