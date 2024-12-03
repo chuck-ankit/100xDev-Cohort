@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import './App.css';
-import { useState } from 'react';
 
 import Home from './pages/Home';
 import Task1 from './pages/Task1';
@@ -10,7 +9,6 @@ import Task4 from './pages/Task4';
 import Task5 from './pages/Task5';
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <Router>
       <div className="App bg-emerald-50 min-h-screen">
@@ -33,6 +31,9 @@ function App() {
           <Route path="/task4" element={<Task4 />} />
           <Route path="/task5" element={<Task5 />} />
         </Routes>
+        <footer className="bg-emerald-200 p-4 text-center mt-8">
+          <p className="text-gray-700 text-sm">&copy; 2024 My React App. All rights reserved.</p>
+        </footer>
       </div>
     </Router>
   );
