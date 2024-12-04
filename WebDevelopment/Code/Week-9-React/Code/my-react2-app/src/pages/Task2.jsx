@@ -18,7 +18,7 @@ function Counter() {
         // Set up the interval to increment the counter every second
         const interval = setInterval(() => {
             setCount((prevCount) => prevCount + 1); // Use functional update to get the latest value
-        }, 1000);
+        }, 500);
 
         console.log("Mounted");
 
@@ -48,8 +48,18 @@ function Counter() {
 }
 
 function Task2() {
+    let [counterVisible, setCountVisible] = useState(true); 
+
+    useEffect(function() {
+        let clock = setInterval(function() {
+            setCountVisible(c => !c)
+        }, 4000);
+        clearInterval(clock);
+    }, [])
+
+
     return (
-        let counterVisible = true; 
+        
         <div className="min-h-screen bg-gradient-to-br bg-red-orange-50 flex flex-col">
             {/* Heading Section */}
             <header className="w-full py-6 text-center bg-inherit">
