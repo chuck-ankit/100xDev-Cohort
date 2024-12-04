@@ -49,6 +49,7 @@ function Counter() {
 
 function Task2() {
     return (
+        let counterVisible = true; 
         <div className="min-h-screen bg-gradient-to-br bg-red-orange-50 flex flex-col">
             {/* Heading Section */}
             <header className="w-full py-6 text-center bg-inherit">
@@ -59,7 +60,7 @@ function Task2() {
             <main className="flex-grow flex items-center justify-center">
                 <div className="w-full max-w-md p-6 rounded-lg shadow-lg bg-white">
                     <div className="space-y-3 text-center">
-                        <Counter></Counter>
+                        {counterVisible ? <Counter></Counter>: null}
                     </div>
                 </div>
             </main>
