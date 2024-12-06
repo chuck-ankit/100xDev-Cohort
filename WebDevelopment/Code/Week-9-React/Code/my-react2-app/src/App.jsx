@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-ro
 import HomePage from './pages/HomePage';
 import Task1 from './pages/Task1';
 import Task2 from './pages/Task2';
+import Task3 from './pages/Task3';
 
 function App() {
   return (
@@ -18,13 +19,14 @@ function App() {
           <li><Link to='/' className="text-xl font-medium text-red-orange-950 hover:text-red-orange-600">Home</Link> </li>
           <li><Link to='/task1' className="text-xl font-medium text-red-orange-950 hover:text-red-orange-600">Task 1</Link> </li>
           <li><Link to='/task2' className="text-xl font-medium text-red-orange-950 hover:text-red-orange-600">Task 2</Link></li>
+          <li><Link to='/task3' className="text-xl font-medium text-red-orange-950 hover:text-red-orange-600">Task3</Link></li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/task1" element={<Task1 />} />
         <Route path="/task2" element={<Task2 />} />
-        {/* <Route path="/task3" element={<Task3 />} /> */}
+        <Route path="/task3" element={<Task3 />} />
         {/* <Route path="/task4" element={<Task4 />} /> */}
         {/* <Route path="/task5" element={<Task5 />} /> */}
         {/* <Route path="/task6" element={<Task6 />} /> */}
