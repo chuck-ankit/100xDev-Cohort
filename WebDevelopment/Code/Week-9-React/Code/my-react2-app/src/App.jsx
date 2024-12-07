@@ -11,6 +11,7 @@ import Task2 from './pages/Task2';
 import Task3 from './pages/Task3';
 
 function App() {
+
   return (
     <Router>
     <div className="App min-h-screen bg-red-orange-50">
