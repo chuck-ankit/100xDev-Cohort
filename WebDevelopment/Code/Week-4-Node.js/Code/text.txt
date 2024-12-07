@@ -1,0 +1,1 @@
+This is a sample text made for testing the javascript funtions in NodeJS.
