@@ -5,29 +5,22 @@
 
 const fs = require('fs');
 
-function countWords(fileName) {
-  fs.readFile(fileName, 'utf8', function (err, data) {
+function main(fileName) {
+  fs.readFile(fileName, 'utf8', (err, data) => { 
     if (err) {
       console.error(`Error reading file: ${err.message}`);
       return;
+    } else {
+      let total = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] === " " || data[i] === "\n") { 
+          total++;
+        }
+      }
+      console.log(`The total number of words in the file is: ${total + 1}`);
     }
-
-    // Splitting the data into words and counting them
-    const words = data.split(/\s+/); // Split by whitespace (spaces, tabs, newlines)
-    const wordCount = words.filter(word => word.length > 0).length; // Exclude empty strings
-    console.log(`The file contains ${wordCount} words.`);
   });
 }
 
-function main() {
-  const fileName = process.argv[2]; // File path passed as a command-line argument
-  if (!fileName) {
-    console.error("Please provide a file path as an argument.");
-    console.log("Usage: node script.js <file-path>");
-    return;
-  }
-
-  countWords(fileName);
-}
-
-main();
+// Call the function with the file name
+main("text.txt");
