@@ -29,3 +29,6 @@ program
     });
 
 program.parse(); // This must be outside all definitions
+
+
+//Command to run: node practice.js count_letters text.txt
