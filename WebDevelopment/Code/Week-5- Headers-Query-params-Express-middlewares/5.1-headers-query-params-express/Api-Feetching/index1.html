@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetching</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>LinkedIn</h1>
+
+    <div id="post"></div>
+    <button onclick="getRecentPost()">Get Post</button>
+
+    <script>
+        async function getRecentPost() {
+
+            const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+            const posts = response.data;  // Getting all post objects
+            for (let i = 0; i < posts.length; i++) {
+                document.getElementById("post").innerHTML += ("<div>" + posts[i].body + "</div>");  // Stringified the object
+            }
+        }
+    </script>
+</body>
+
+</html>
