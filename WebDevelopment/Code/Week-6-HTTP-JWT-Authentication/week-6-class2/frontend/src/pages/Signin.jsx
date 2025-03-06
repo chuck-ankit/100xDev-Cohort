@@ -1,0 +1,41 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+function Signin({ setToken }) {
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post("/signin", formData);
+      localStorage.setItem("token", data.token);
+      setToken(data.token);
+      navigate("/profile");
+    } catch (err) {
+      setError(err.response?.data?.message || "Invalid credentials.");
+    }
+  };
+
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md w-80">
+      <h2 className="text-xl font-bold">Sign In</h2>
+      {error && <p className="text-red-500">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="username" placeholder="Username" className="w-full p-2 my-2 border rounded"
+          onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" className="w-full p-2 my-2 border rounded"
+          onChange={handleChange} required />
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Sign In</button>
+      </form>
+    </div>
+  );
+}
+
+export default Signin;
